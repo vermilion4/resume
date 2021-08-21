@@ -1,0 +1,102 @@
+ header, nav, section {
+    display: block;
+}
+
+
+
+/* ===================================================================
+ * # basic/base setup styles - (_basic.scss)
+ *
+ * ------------------------------------------------------------------- */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+.rows {
+    width: 94%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rows:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.rows .rows {
+    width: auto;
+    max-width: none;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+
+
+
+
+/* ------------------------------------------------------------------- 
+ * ## medium size devices - (_grid.scss)
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1200px) {
+    .rows .rows {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## tablets - (_grid.scss)
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 800px) {
+    .rows {
+        width: 90%;
+    }
+   
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## mobile devices - (_grid.scss)
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 600px) {
+    .rows {
+        width: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .rows .rows {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## small mobile devices - (_grid.scss) 
+ * ------------------------------------------------------------------- */
+
+
+/* stack columns on small mobile devices
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 400px) {
+    .rows .rows {
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
