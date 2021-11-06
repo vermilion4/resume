@@ -1188,3 +1188,9 @@ li {
     height: 100%;
     object-fit: contain;
 }
+
+/* Projects */
+
+.card-body{
+    border-top: 1px solid #e6e6e6;
+}
