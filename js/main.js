@@ -1,200 +1,174 @@
+(function ($) {
+  'use strict';
 
-(function($) {
-
-    "use strict";
-
-    var cfg = {
-        scrollDuration : 400, // smoothscroll duration
+  var cfg = {
+      scrollDuration: 200, // smoothscroll duration
     },
-
     $WIN = $(window);
 
-    // Add the User Agent to the <html>
-    // will be used for IE10 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0))
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
+  // Add the User Agent to the <html>
+  // will be used for IE10 detection (Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0))
+  var doc = document.documentElement;
+  doc.setAttribute('data-useragent', navigator.userAgent);
 
+  /* Preloader
+   * -------------------------------------------------- */
+  var ssPreloader = function () {
+    $('html').addClass('ss-preload');
 
-    /* Preloader
-     * -------------------------------------------------- */
-    var ssPreloader = function() {
+    $WIN.on('load', function () {
+      // force page scroll position to top at page refresh
+      // $('html, body').animate({ scrollTop: 0 }, 'normal');
 
-        $("html").addClass('ss-preload');
+      // will first fade out the loading animation
+      $('#loader').fadeOut('slow', function () {
+        // will fade out the whole DIV that covers the website.
+        $('#preloader').delay(100).fadeOut('slow');
+      });
 
-        $WIN.on('load', function() {
+      // for hero content animations
+      $('html').removeClass('ss-preload');
+      $('html').addClass('ss-loaded');
+    });
+  };
 
-            // force page scroll position to top at page refresh
-            // $('html, body').animate({ scrollTop: 0 }, 'normal');
+  /* Move header
+   * -------------------------------------------------- */
+  var ssMoveHeader = function () {
+    var hero = $('.page-hero'),
+      hdr = $('header'),
+      triggerHeight = hero.outerHeight() - 170;
 
-            // will first fade out the loading animation 
-            $("#loader").fadeOut("slow", function() {
-                // will fade out the whole DIV that covers the website.
-                $("#preloader").delay(300).fadeOut("slow");
-            }); 
-            
-            // for hero content animations 
-            $("html").removeClass('ss-preload');
-            $("html").addClass('ss-loaded');
-        
-        });
-    };
+    $WIN.on('scroll', function () {
+      var loc = $WIN.scrollTop();
 
+      if (loc > triggerHeight) {
+        hdr.addClass('sticky');
+      } else {
+        hdr.removeClass('sticky');
+      }
 
-    /* Move header
-     * -------------------------------------------------- */
-    var ssMoveHeader = function () {
+      if (loc > triggerHeight + 20) {
+        hdr.addClass('offset');
+      } else {
+        hdr.removeClass('offset');
+      }
 
-        var hero = $('.page-hero'),
-            hdr = $('header'),
-            triggerHeight = hero.outerHeight() - 170;
+      if (loc > triggerHeight + 150) {
+        hdr.addClass('scrolling');
+      } else {
+        hdr.removeClass('scrolling');
+      }
+    });
+  };
 
+  /* Mobile Menu
+   * ---------------------------------------------------- */
+  var ssMobileMenu = function () {
+    var toggleButton = $('.header-menu-toggle'),
+      nav = $('.header-nav-wrap');
 
-        $WIN.on('scroll', function () {
+    toggleButton.on('click', function (event) {
+      event.preventDefault();
 
-            var loc = $WIN.scrollTop();
+      toggleButton.toggleClass('is-clicked');
+      nav.slideToggle();
+    });
 
-            if (loc > triggerHeight) {
-                hdr.addClass('sticky');
-            } else {
-                hdr.removeClass('sticky');
-            }
+    if (toggleButton.is(':visible')) nav.addClass('mobile');
 
-            if (loc > triggerHeight + 20) {
-                hdr.addClass('offset');
-            } else {
-                hdr.removeClass('offset');
-            }
+    $WIN.on('resize', function () {
+      if (toggleButton.is(':visible')) nav.addClass('mobile');
+      else nav.removeClass('mobile');
+    });
 
-            if (loc > triggerHeight + 150) {
-                hdr.addClass('scrolling');
-            } else {
-                hdr.removeClass('scrolling');
-            }
+    nav.find('a').on('click', function () {
+      if (nav.hasClass('mobile')) {
+        toggleButton.toggleClass('is-clicked');
+        nav.slideToggle();
+      }
+    });
+  };
 
-        });
+  /* Highlight the current section in the navigation bar
+   * ------------------------------------------------------ */
+  var ssWaypoints = function () {
+    var sections = $('.target-section'),
+      navigation_links = $('.header-nav li a');
 
-    };
+    sections.waypoint({
+      handler: function (direction) {
+        var active_section;
 
+        active_section = $('section#' + this.element.id);
 
-    /* Mobile Menu
-     * ---------------------------------------------------- */ 
-    var ssMobileMenu = function() {
+        if (direction === 'up')
+          active_section = active_section.prevAll('.target-section').first();
 
-        var toggleButton = $('.header-menu-toggle'),
-            nav = $('.header-nav-wrap');
+        var active_link = $(
+          '.header-nav li a[href="#' + active_section.attr('id') + '"]'
+        );
 
-        toggleButton.on('click', function(event){
-            event.preventDefault();
+        navigation_links.parent().removeClass('current');
+        active_link.parent().addClass('current');
+      },
 
-            toggleButton.toggleClass('is-clicked');
-            nav.slideToggle();
-        });
+      offset: '25%',
+    });
+  };
 
-        if (toggleButton.is(':visible')) nav.addClass('mobile');
+  /* Smooth Scrolling
+   * ------------------------------------------------------ */
+  var ssSmoothScroll = function () {
+    $('.smoothscroll').on('click', function (e) {
+      var target = this.hash,
+        $target = $(target);
 
-        $WIN.on('resize', function() {
-            if (toggleButton.is(':visible')) nav.addClass('mobile');
-            else nav.removeClass('mobile');
-        });
+      e.preventDefault();
+      e.stopPropagation();
 
-        nav.find('a').on("click", function() {
+      $('html, body')
+        .stop()
+        .animate(
+          {
+            scrollTop: $target.offset().top,
+          },
+          cfg.scrollDuration,
+          'swing',
+          function () {
+            window.location.hash = target;
+          }
+        );
+    });
+  };
 
-            if (nav.hasClass('mobile')) {
-                toggleButton.toggleClass('is-clicked');
-                nav.slideToggle(); 
-            }
-        });
+  /* Back to Top
+   * ------------------------------------------------------ */
+  var ssBackToTop = function () {
+    var pxShow = 500, // height on which the button will show
+      fadeInTime = 300, // how slow/fast you want the button to show
+      fadeOutTime = 300, // how slow/fast you want the button to hide
+      scrollSpeed = 300, // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+      goTopButton = $('.go-top');
 
-    };
+    // Show or hide the sticky footer button
+    $(window).on('scroll', function () {
+      if ($(window).scrollTop() >= pxShow) {
+        goTopButton.fadeIn(fadeInTime);
+      } else {
+        goTopButton.fadeOut(fadeOutTime);
+      }
+    });
+  };
 
-
-
-
-    /* Highlight the current section in the navigation bar
-     * ------------------------------------------------------ */
-    var ssWaypoints = function() {
-
-        var sections = $(".target-section"),
-            navigation_links = $(".header-nav li a");
-
-        sections.waypoint( {
-
-            handler: function(direction) {
-
-                var active_section;
-
-                active_section = $('section#' + this.element.id);
-
-                if (direction === "up") active_section = active_section.prevAll(".target-section").first();
-
-                var active_link = $('.header-nav li a[href="#' + active_section.attr("id") + '"]');
-
-                navigation_links.parent().removeClass("current");
-                active_link.parent().addClass("current");
-
-            },
-
-            offset: '25%'
-
-        });
-        
-    };
-
-
-   /* Smooth Scrolling
-    * ------------------------------------------------------ */
-    var ssSmoothScroll = function() {
-
-        $('.smoothscroll').on('click', function (e) {
-            var target = this.hash,
-            $target    = $(target);
-        
-            e.preventDefault();
-            e.stopPropagation();
-
-            $('html, body').stop().animate({
-                'scrollTop': $target.offset().top
-            }, cfg.scrollDuration, 'swing', function () {
-                window.location.hash = target;
-            });
-
-        });
-    };
-
-
-   /* Back to Top
-    * ------------------------------------------------------ */
-    var ssBackToTop = function() {
-
-        var pxShow  = 500,   // height on which the button will show
-        fadeInTime  = 400,   // how slow/fast you want the button to show
-        fadeOutTime = 400,   // how slow/fast you want the button to hide
-        scrollSpeed = 300,   // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
-        goTopButton = $(".go-top")
-
-        // Show or hide the sticky footer button
-        $(window).on('scroll', function() {
-            if ($(window).scrollTop() >= pxShow) {
-                goTopButton.fadeIn(fadeInTime);
-            } else {
-                goTopButton.fadeOut(fadeOutTime);
-            }
-        });
-    };
-
-
-   /* Initialize
-    * ------------------------------------------------------ */
-    (function ssInit() {
-
-        ssPreloader();
-        ssMoveHeader();
-        ssMobileMenu();
-        ssWaypoints();
-        ssSmoothScroll();
-        ssBackToTop();
-
-    })();
-
-
+  /* Initialize
+   * ------------------------------------------------------ */
+  (function ssInit() {
+    ssPreloader();
+    ssMoveHeader();
+    ssMobileMenu();
+    ssWaypoints();
+    ssSmoothScroll();
+    ssBackToTop();
+  })();
 })(jQuery);
