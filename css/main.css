@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* ===================================================================
- * # base style overrides - (_document-setup.scss)
+ * # base style overrides
  *
  * ------------------------------------------------------------------- */
 
@@ -37,7 +37,7 @@ p {
 }
 
 /* ------------------------------------------------------------------- 
- * ## links - (_document-setup.scss) 
+ * ## links 
  * ------------------------------------------------------------------- */
 
 a {
@@ -57,7 +57,7 @@ a:focus {
 }
 
 /* ===================================================================
- * # typography & general theme styles - (_document-setup.scss) 
+ * # typography & general theme styles 
  * 
  * ------------------------------------------------------------------- */
 
@@ -134,7 +134,7 @@ h5 {
 }
 
 /* ------------------------------------------------------------------- 
- * ## Lists - (_document-setup.scss)  
+ * ## Lists 
  * ------------------------------------------------------------------- */
 
 ul {
@@ -167,7 +167,7 @@ dd {
 }
 
 /* ------------------------------------------------------------------- 
- * ## Spacing - (_document-setup.scss)  
+ * ## Spacing  
  * ------------------------------------------------------------------- */
 
 button,
@@ -181,38 +181,8 @@ dl {
   margin-bottom: 3rem;
 }
 
-/* ------------------------------------------------------------------- 
- * ## pace.js styles - minimal  - (_document-setup.scss)
- * ------------------------------------------------------------------- */
-
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-
-.pace-inactive {
-  display: none;
-}
-
-.pace .pace-progress {
-  background: #862121;
-  position: fixed;
-  z-index: 900;
-  top: 0;
-  right: 100%;
-  width: 100%;
-  height: 4px;
-}
-
-.oldie .pace {
-  display: none;
-}
-
 /* ===================================================================
- * # buttons - (_buttons.scss)
+ * # buttons
  *
  * ------------------------------------------------------------------- */
 
@@ -291,7 +261,7 @@ textarea:placeholder-shown {
 }
 
 /* ------------------------------------------------------------------- 
- * ## section intro - (_common-styles.scss)
+ * ## section intro
  * ------------------------------------------------------------------- */
 
 .section-intro {
@@ -707,6 +677,12 @@ textarea:placeholder-shown {
  * # home 
  * ------------------------------------------------------------------- */
 
+ #home > img{
+   object-fit: cover;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+ }
 .s-home {
   width: 100%;
   height: 100%;
