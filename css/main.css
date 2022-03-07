@@ -611,6 +611,7 @@ textarea:placeholder-shown {
   display: block;
   line-height: 72px;
   color: #ffffff;
+  text-decoration: none;
 }
 
 .header-nav li.current a {
@@ -677,11 +678,13 @@ textarea:placeholder-shown {
  * # home 
  * ------------------------------------------------------------------- */
 
- #home > img{
-   object-fit: cover;
-   position: absolute;
-   width: 100%;
+ .parallax{
+   background-image: url("../images/portfolio.webp");
    height: 100%;
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
  }
 .s-home {
   width: 100%;
