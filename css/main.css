@@ -1357,6 +1357,7 @@ footer hr {
   transform: scale(1);
   background-color: #0a0a0a;
   transition: all ease-in-out 0.3s;
+  border: 1px solid #d7d6d654;
 }
 .skill:hover {
   transform: scale(1.1);
@@ -1383,6 +1384,12 @@ footer hr {
 
 .card-body {
   border-top: 1px solid #e6e6e6;
+}
+.card-body-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 768px) {
