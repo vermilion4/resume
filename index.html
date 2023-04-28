@@ -69,13 +69,17 @@
 
     <a title="Back to Top" href="#top"><i class="fas fa-arrow-up go-top text-end" aria-hidden="true"></i></a>
 
+    <button class="button-49" style="position: fixed; bottom: 40px; right: 5px; z-index: 10;"
+        onclick="openIframe()">My Merch</button>
+    <!-- <iframe style="border-radius:24px; position: fixed; bottom: 0; right: 5px; z-index: 1000;" src="https://embed.creator-spring.com/widget?slug=ady-merch-2&per=6&bg=ffffff&txtcolor=000000&currency=&page=1" title="Luffy Merch Merch store powered by Spring" width="320" height="420" data-reactroot=""></iframe> -->
+
     <!-- header
     ================================================== -->
     <header class="s-header">
 
-<div class="logo">
-    <img src="images/logo/logo-white.png" alt="logo">
-</div>
+        <div class="logo">
+            <img src="images/logo/logo-white.png" alt="logo">
+        </div>
         <nav class="header-nav-wrap">
             <ul class="header-nav">
                 <li class="current"><a href="#home" title="Home">Home</a></li>
@@ -767,6 +771,37 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <script>
+        function openIframe ()
+        {
+            var iframe = document.createElement("iframe");
+            iframe.style.borderRadius = "24px";
+            iframe.style.position = "fixed";
+            iframe.style.bottom = "0";
+            iframe.style.right = "5px";
+            iframe.style.zIndex = "1000";
+            iframe.src = "https://embed.creator-spring.com/widget?slug=ady-merch-2&per=6&bg=ffffff&txtcolor=000000&currency=&page=1";
+            iframe.title = "Luffy Merch Merch store powered by Spring";
+            iframe.width = "320";
+            iframe.height = "420";
+            document.body.appendChild(iframe);
+
+            var closeButton = document.createElement("button");
+            closeButton.innerText = "Close";
+            closeButton.classList.add('button-54')
+            closeButton.style.position = "fixed";
+            closeButton.style.bottom = "430px";
+            closeButton.style.right = "5px";
+            closeButton.style.zIndex = "1000";
+            closeButton.onclick = function ()
+            {
+                iframe.remove();
+                closeButton.remove();
+            };
+            document.body.appendChild(closeButton);
+
+        }
+    </script>
 </body>
 
 </html>
