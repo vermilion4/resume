@@ -449,13 +449,24 @@ textarea:placeholder-shown {
  *
  * ------------------------------------------------------------------- */
 
+ .logo{
+ width: 200px;
+ }
+
+ .logo img{
+  max-width: 100%;
+  height: auto;
+ }
+
 .s-header {
   width: 100%;
-  height: 72px;
+  height: 122px;
   background-color: transparent;
   position: absolute;
   top: 0;
   z-index: 500;
+  display: flex;
+  align-items: center;
 }
 
 .s-header.offset {
@@ -503,6 +514,7 @@ textarea:placeholder-shown {
   position: absolute;
   right: 29px;
   top: 18px;
+  margin-top: 25px;
   height: 42px;
   width: 42px;
   line-height: 42px;
@@ -597,7 +609,8 @@ textarea:placeholder-shown {
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   position: absolute;
-  top: 9px;
+  top: 0;
+
   right: 50px;
 }
 
@@ -641,7 +654,6 @@ textarea:placeholder-shown {
     height: auto;
     width: 100%;
     right: auto;
-    top: 0;
     left: 0;
     background-color: #000000;
     padding: 120px 40px 21px;
@@ -1140,6 +1152,9 @@ html.no-csstransitions .home-content__main {
 }
 
 @media only screen and (max-width: 400px) {
+  .logo{
+    width: 120px;
+  }
   .home-content {
     vertical-align: middle;
   }
