@@ -58,6 +58,7 @@
     ================================================== -->
     <script src="js/modernizr.js" defer></script>
     <script src="js/pace.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
     <!-- font awesome
@@ -69,8 +70,8 @@
 
     <a title="Back to Top" href="#top"><i class="fas fa-arrow-up go-top text-end" aria-hidden="true"></i></a>
 
-    <button class="button-49" style="position: fixed; bottom: 40px; right: 5px; z-index: 10;"
-        onclick="openIframe()">My Merch</button>
+    <button class="button-49" style="position: fixed; bottom: 40px; right: 5px; z-index: 10;" onclick="openIframe()">My
+        Merch</button>
     <!-- <iframe style="border-radius:24px; position: fixed; bottom: 0; right: 5px; z-index: 1000;" src="https://embed.creator-spring.com/widget?slug=ady-merch-2&per=6&bg=ffffff&txtcolor=000000&currency=&page=1" title="Luffy Merch Merch store powered by Spring" width="320" height="420" data-reactroot=""></iframe> -->
 
     <!-- header
@@ -274,219 +275,335 @@
 
         </section> <!-- end skills section -->
 
+
         <!-- Projects section -->
         <section id="project" class="container target-section">
             <h2 class="text-center">My Projects</h2>
-
-            <div class="row text-center">
-
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/warehouzit-home.png" alt="warehouzit image" width="100"
-                            height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Warehöuzit</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://warehouzit.com" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/netflix.webp" alt="netflix image" width="100"
-                            height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Netflix Clone</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion4.github.io/netflix-clone/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/youtube.png" alt="youtube image" width="100"
-                            height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Youtube Clone</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion4.github.io/youtube_clone" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Add buttons to select the technology category -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-category="react">React</button>
+                <button class="tab-btn" data-category="next">Next.js</button>
+                <button class="tab-btn" data-category="tailwind">Tailwind CSS</button>
+                <button class="tab-btn" data-category="wordpress">Wordpress</button>
+                <button class="tab-btn" data-category="webflow">Webflow</button>
+                <button class="tab-btn" data-category="html-css">HTML & CSS</button>
+                <!-- Add more buttons for other categories if needed -->
             </div>
-            <div class="row text-center">
+            <!-- Projects grouped by categories -->
+            <div class="projects-category" data-category="react">
 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/zuri.png" alt="gif" width="100" height="auto">
+                <div class="row text-center">
 
-                        <div class="card-body">
-                            <h4 class="card-title">Zuri Clone</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion4.github.io/zuri-landing/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo
-                                &raquo;</a>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/warehouzit-home.png" alt="warehouzit image"
+                                width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Warehöuzit</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://warehouzit.com" target="_blank" class="btn btn-secondary live-btn">Live
+                                    Demo &raquo;</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/gradient.png" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Gradient Swatch Site</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion4.github.io/gradient_website/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/minimum_living.png" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Minimum Living Site</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion4.github.io/minimum_living/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/youtube.png" alt="youtube image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Youtube Clone</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/youtube_clone" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/blogospherehub.png" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Blogosphere Hub</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://blogospherehub.netlify.app" target="_blank" class="btn btn-secondary live-btn">Live
-                                Demo
-                                &raquo;</a>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/gradient.png" alt="image" width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Gradient Swatch Site</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/gradient_website/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/imdb-clone.png" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">IMDb Clone</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://imdb-clone-vermilion4.vercel.app/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/minimum_living.png" alt="image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Minimum Living Site</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/minimum_living/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/tribeteq.webp" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Tribe TeQ</h4>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/blogospherehub.png" alt="image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Blogosphere Hub</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://blogospherehub.netlify.app" target="_blank"
+                                    class="btn btn-secondary live-btn">Live
+                                    Demo
+                                    &raquo;</a>
+                            </div>
                         </div>
-                        <div class="card-footer py-4">
-                            <a href="https://tribe-teq.netlify.app/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo
-                                &raquo;</a>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/imdb-clone.png" alt="image" width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">IMDb Clone</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://imdb-clone-vermilion4.vercel.app/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/bootstrap_lp.webp" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Bootstrap Landing Page</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion4.github.io/bootstrap_landing_page/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/sendfright.webp" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Send Freight</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://send-freight-vermilion4.vercel.app/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+            <div class="projects-category" data-category="next">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/warehouzit-home.png" alt="warehouzit image"
+                                width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Warehöuzit</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://warehouzit.com" target="_blank" class="btn btn-secondary live-btn">Live
+                                    Demo &raquo;</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/colorflipper.webp" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Color Flipper</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion4.github.io/color-flipper" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/imdb-clone.png" alt="image" width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">IMDb Clone</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://imdb-clone-vermilion4.vercel.app/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/space.webp" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Space Tourism</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion4.github.io/space-tour" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/camaro.webp" alt="image" width="100" height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Chevrolet Webpage</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://camaro.netlify.app/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo
-                                &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/portfolio_screen.webp" alt="image" width="100"
-                            height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Portfolio</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://vermilion-resume.netlify.app/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
-                        </div>
-                    </div>
-                </div>
 
-
+            <div class="projects-category" data-category="tailwind">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/imdb-clone.png" alt="image" width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">IMDb Clone</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://imdb-clone-vermilion4.vercel.app/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/warehouzit-home.png" alt="warehouzit image"
+                                width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Warehöuzit</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://warehouzit.com" target="_blank" class="btn btn-secondary live-btn">Live
+                                    Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/minimum_living.png" alt="image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Minimum Living Site</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/minimum_living/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/blogospherehub.png" alt="image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Blogosphere Hub</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://blogospherehub.netlify.app" target="_blank"
+                                    class="btn btn-secondary live-btn">Live
+                                    Demo
+                                    &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section> <!-- end projects section -->
+            <div class="projects-category" data-category="wordpress">
+                <h2 class="construction">Under Construction</h2>
+            </div>
+            <div class="projects-category" data-category="webflow">
+                <h2 class="construction">Under Construction</h2>
+            </div>
+            <div class="projects-category" data-category="html-css">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/netflix.webp" alt="netflix image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Netflix Clone</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/netflix-clone/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/zuri.png" alt="gif" width="100" height="auto">
+
+                            <div class="card-body">
+                                <h4 class="card-title">Zuri Clone</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/zuri-landing/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo
+                                    &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/tribeteq.webp" alt="image" width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Tribe TeQ</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://tribe-teq.netlify.app/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo
+                                    &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/bootstrap_lp.webp" alt="image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Bootstrap Landing Page</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/bootstrap_landing_page/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/sendfright.webp" alt="image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Send Freight</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://send-freight-vermilion4.vercel.app/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/colorflipper.webp" alt="image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Color Flipper</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/color-flipper" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/space.webp" alt="image" width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Space Tourism</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion4.github.io/space-tour" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/camaro.webp" alt="image" width="100" height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Chevrolet Webpage</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://camaro.netlify.app/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo
+                                    &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top" src="images/portfolio_screen.webp" alt="image" width="100"
+                                height="auto">
+                            <div class="card-body">
+                                <h4 class="card-title">Portfolio</h4>
+                            </div>
+                            <div class="card-footer py-4">
+                                <a href="https://vermilion-resume.netlify.app/" target="_blank"
+                                    class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- end projects section -->
 
         <!-- experience section -->
         <section id="experience" class="target-section">
@@ -804,7 +921,7 @@
 
             var closeButton = document.createElement("button");
             closeButton.innerText = "Close";
-            closeButton.classList.add('button-54')
+            closeButton.classList.add('button-54');
             closeButton.style.position = "fixed";
             closeButton.style.bottom = "430px";
             closeButton.style.right = "5px";
@@ -817,7 +934,7 @@
             document.body.appendChild(closeButton);
 
         }
-  
+
     </script>
 </body>
 

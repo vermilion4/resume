@@ -535,6 +535,33 @@ textarea:placeholder-shown {
   }
 }
 
+/* Optional CSS to hide non-active categories */
+.projects-category {
+  display: none;
+}
+
+.projects-category.active {
+  display: block;
+}
+.tab-buttons{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 4rem 0;
+}
+.tab-btn{
+  border: none;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.tab-btn.active{
+  background-color: black;
+  color: #fff;
+}
+.construction{
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .button-49,
   .button-49:after {

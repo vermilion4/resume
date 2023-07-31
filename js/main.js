@@ -203,6 +203,32 @@ window.addEventListener('scroll', () => {
     });
   };
 
+  // Projects tab
+  $(document).ready(function() {
+    // Set the initial active category
+    showProjectsByCategory('react');
+  
+    // Click event handler for tab buttons
+    $('.tab-btn').click(function() {
+      const category = $(this).data('category');
+      showProjectsByCategory(category);
+
+        // Add active class to the clicked button
+        $('.tab-btn').removeClass('active');
+        $(this).addClass('active');
+      });
+  
+    // Function to show projects of a specific category
+    function showProjectsByCategory(category) {
+      // Hide all project categories
+      $('.projects-category').removeClass('active');
+  
+      // Show the selected category
+      $(`.projects-category[data-category="${category}"]`).addClass('active');
+   
+    }
+  });
+
   /* Initialize
    * ------------------------------------------------------ */
   (function ssInit() {
