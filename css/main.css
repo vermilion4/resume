@@ -553,10 +553,16 @@ textarea:placeholder-shown {
   border: none;
   padding: 10px;
   text-transform: uppercase;
+  transition: all ease-in-out 0.3s;
 }
 .tab-btn.active{
   background-color: black;
   color: #fff;
+}
+.tab-btn:hover{
+  background-color: black;
+  color: #fff;
+  transform: scale(1.1);
 }
 .construction{
   text-align: center;
