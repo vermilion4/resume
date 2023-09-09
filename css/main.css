@@ -455,7 +455,7 @@ textarea:placeholder-shown {
   border: 0;
   color: #fff;
   letter-spacing: 3px;
-  box-shadow: 6px 0px 0px #00E6F6;
+  box-shadow: 6px 0px 0px #00e6f6;
   outline: transparent;
   position: relative;
   user-select: none;
@@ -470,7 +470,7 @@ textarea:placeholder-shown {
   --slice-3: inset(10% -6px 85% 0);
   --slice-4: inset(40% -6px 43% 0);
   --slice-5: inset(80% -6px 5% 0);
-  
+
   content: 'Check Merch';
   display: block;
   position: absolute;
@@ -478,8 +478,14 @@ textarea:placeholder-shown {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  background: linear-gradient(
+    45deg,
+    transparent 3%,
+    #00e6f6 3%,
+    #00e6f6 5%,
+    #ff013c 5%
+  );
+  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
   clip-path: var(--slice-0);
 }
 
@@ -543,28 +549,30 @@ textarea:placeholder-shown {
 .projects-category.active {
   display: block;
 }
-.tab-buttons{
+.tab-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin: 4rem 0;
+  overflow-x: auto;
 }
-.tab-btn{
+.tab-btn {
   border: none;
   padding: 10px;
   text-transform: uppercase;
   transition: all ease-in-out 0.3s;
+  white-space: nowrap;
 }
-.tab-btn.active{
+.tab-btn.active {
   background-color: black;
   color: #fff;
 }
-.tab-btn:hover{
+.tab-btn:hover {
   background-color: black;
   color: #fff;
   transform: scale(1.1);
 }
-.construction{
+.construction {
   text-align: center;
 }
 
@@ -577,10 +585,9 @@ textarea:placeholder-shown {
   }
 }
 
-
 /* CSS */
 .button-54 {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
   text-decoration: none;
@@ -589,7 +596,8 @@ textarea:placeholder-shown {
   cursor: pointer;
   border: 3px solid;
   padding: 0.25em 0.5em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
@@ -613,14 +621,14 @@ textarea:placeholder-shown {
  *
  * ------------------------------------------------------------------- */
 
- .logo{
- width: 200px;
- }
+.logo {
+  width: 200px;
+}
 
- .logo img{
+.logo img {
   max-width: 100%;
   height: auto;
- }
+}
 
 .s-header {
   width: 100%;
@@ -809,6 +817,15 @@ textarea:placeholder-shown {
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 800px) {
+  .tab-buttons {
+    flex-wrap: wrap; /* Wrap buttons to the next line */
+    justify-content: flex-start; /* Align buttons to the left */
+    padding: 0.5rem; /* Add some spacing */
+  }
+
+  .tab-btn {
+    margin: 0.2rem; /* Adjust margin for spacing between buttons */
+  }
   .header-logo {
     left: 40px;
   }
@@ -1316,7 +1333,7 @@ html.no-csstransitions .home-content__main {
 }
 
 @media only screen and (max-width: 400px) {
-  .logo{
+  .logo {
     width: 120px;
   }
   .home-content {
