@@ -24,7 +24,7 @@ Welcome to my portfolio! This repository showcases my latest projects and accomp
 
 ## About Me
 
-I am a frontend developer with 2+ years of experience building web applications and websites. I am passionate about creating user-friendly and visually appealing interfaces using the latest web technologies.
+I am a frontend developer with 3 years of experience building web applications and websites. I am passionate about creating user-friendly and visually appealing interfaces using the latest web technologies.
 
 ## Contact Me
 
