@@ -863,74 +863,6 @@
         </section><!-- end education section -->
 
         <!-- contact section -->
-        <!-- <section id="contact" class="target-section">
-
-            <div class="container js-scroll fade-in-bottom">
-                <h2 class="text-center js-scroll fade-in">Contact Me</h2>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <form method="POST" name="contact" data-netlify="true">
-                                <div class="h3w"><strong>Feel free to contact me </strong></div>
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="fa fa-user-circle f"></i></span>
-                                            <input class="form-control" type="text" name="name" placeholder="Name"
-                                                required="required" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="fa fa-file-text f"></i></span>
-                                            <input class="form-control" type="text" name="Subject" placeholder="Subject"
-                                                required="required" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="fa fa-envelope f"></i></span>
-                                            <input class="form-control" type="email" name="_replyto"
-                                                placeholder="E-mail" required="required" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <textarea class="form-control" name="message" placeholder="Your Message"
-                                                required="required"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <button class="btn btn--primary" type="submit">Send</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body address">
-                            <p class="mb-0"><strong>Address </strong></p>
-                            <p class="pb-2">Lagos, Nigeria</p>
-                            <p class="mb-0"><strong>Phone</strong></p>
-                            <p class="pb-2"><a href="tel:+234-813-228-4088">+234-813-228-4088</a></p>
-                            <p class="mb-0"><strong>Email</strong></p>
-                            <p><a href="mailto:andupu4@gmail.com">andupu4@gmail.com</a> </p>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </section> -->
-        <!-- end contact section -->
         <form action="https://api.web3forms.com/submit" method="POST" id="contact" class="target-section">
             <input type="hidden" name="access_key" value="4841cb13-67fb-4135-997b-7ddde85cd60f">
             <div class="container">
@@ -938,9 +870,9 @@
                 <p>Dear Adaeze,</p>
                 <p>My
                     <label for="your-name">name</label> is
-                    <input type="text" name="name" id="your-name" minlength="3" placeholder="(your name here)"
-                        required> and I am contacting you from <input type="text" name="business"
-                        id="your-business" minlength="3" placeholder="(your business)" required>.
+                    <input type="text" name="name" id="your-name" minlength="3" placeholder="(your name here)" required>
+                    and I am contacting you from <input type="text" name="business" id="your-business" minlength="3"
+                        placeholder="(your business)" required>.
                 </p>
 
                 <p>My
@@ -957,17 +889,20 @@
                     <textarea name="message" id="your-message" placeholder="(your msg here)" class="expanding"
                         required></textarea>
                 </p>
-                <p>
-                    <button type="submit" class="button-54 send">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 512 512">
-                            <path fill="currentColor"
-                                d="M474.444 19.857a20.336 20.336 0 0 0-21.592-2.781L33.737 213.8v38.066l176.037 70.414L322.69 496h38.074l120.3-455.4a20.342 20.342 0 0 0-6.62-20.743M337.257 459.693L240.2 310.37l149.353-163.582l-23.631-21.576L215.4 290.069L70.257 232.012L443.7 56.72Z" />
-                        </svg>
-                        <small>send</small>
-                    </button>
-                </p>
+                <div class="h-captcha" data-captcha="true"></div>
+                <br />
+
+                <button type="submit" class="button-54 send">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M474.444 19.857a20.336 20.336 0 0 0-21.592-2.781L33.737 213.8v38.066l176.037 70.414L322.69 496h38.074l120.3-455.4a20.342 20.342 0 0 0-6.62-20.743M337.257 459.693L240.2 310.37l149.353-163.582l-23.631-21.576L215.4 290.069L70.257 232.012L443.7 56.72Z" />
+                    </svg>
+                    <small>send</small>
+                </button>
+
             </div>
         </form>
+        <!-- end contact section -->
 
     </section><!-- end about section-->
 
@@ -1050,6 +985,7 @@
     <script src="js/contact.js"></script>
     <script src="js/main.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
     <script>
         function openIframe ()
         {

@@ -1609,6 +1609,21 @@ footer hr {
  text-align: center;
 }
 
+.g-recaptcha{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+button:disabled {
+  background-color: #999999 !important;
+  cursor: not-allowed !important;
+}
+
+.error{
+  color: red;
+}
+
 label {
   font-weight: 400;
   cursor: pointer;
