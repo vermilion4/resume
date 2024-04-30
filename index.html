@@ -373,7 +373,22 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/dashboard.png" alt="image" width="100" height="auto">
+                        <div class="card-body">
+                            <h4 class="card-title">Dashboard</h4>
+                        </div>
+                        <div class="card-footer py-4">
+                            <a href="https://analytical-dashboard-ady.netlify.app/" target="_blank"
+                                class="btn btn-secondary live-btn">Live
+                                Demo
+                                &raquo;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col mb-4">
                     <div class="card h-100">
                         <img class="card-img-top" src="images/blogospherehub.png" alt="image" width="100" height="auto">
                         <div class="card-body">
@@ -493,6 +508,20 @@
                         <div class="card-footer py-4">
                             <a href="https://stuternmedbot.netlify.app" target="_blank"
                                 class="btn btn-secondary live-btn">Live Demo &raquo;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="images/dashboard.png" alt="image" width="100" height="auto">
+                        <div class="card-body">
+                            <h4 class="card-title">Dashboard</h4>
+                        </div>
+                        <div class="card-footer py-4">
+                            <a href="https://analytical-dashboard-ady.netlify.app/" target="_blank"
+                                class="btn btn-secondary live-btn">Live
+                                Demo
+                                &raquo;</a>
                         </div>
                     </div>
                 </div>
@@ -623,20 +652,6 @@
                             <a href="https://camaro.netlify.app/" target="_blank"
                                 class="btn btn-secondary live-btn">Live Demo
                                 &raquo;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col mb-4">
-                    <div class="card h-100">
-                        <img class="card-img-top" src="images/dashboard.png" alt="dashboard image" width="100"
-                            height="auto">
-                        <div class="card-body">
-                            <h4 class="card-title">Dashboard</h4>
-                        </div>
-                        <div class="card-footer py-4">
-                            <a href="https://adaeze-ult-resource-kit.netlify.app/" target="_blank"
-                                class="btn btn-secondary live-btn">Live Demo &raquo;</a>
                         </div>
                     </div>
                 </div>
@@ -987,8 +1002,21 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
     <script>
-        function openIframe ()
-        {
+        const form = document.getElementById('contact');
+
+        form.addEventListener('submit', function (e) {
+
+            const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+            if (!hCaptcha) {
+                e.preventDefault();
+                alert("Please fill out captcha field")
+                return
+            }
+        });
+    </script>
+    <script>
+        function openIframe() {
             var iframe = document.createElement("iframe");
             iframe.style.borderRadius = "24px";
             iframe.style.position = "fixed";
@@ -1008,8 +1036,7 @@
             closeButton.style.bottom = "430px";
             closeButton.style.right = "5px";
             closeButton.style.zIndex = "1000";
-            closeButton.onclick = function ()
-            {
+            closeButton.onclick = function () {
                 iframe.remove();
                 closeButton.remove();
             };
