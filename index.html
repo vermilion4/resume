@@ -6,7 +6,15 @@
     <meta name="description"
         content="Adaeze Ndupu is a frontend developer specializing in HTML, CSS, Javascript, React, Git, Bootstrap, Tailwind, Next.js, and WordPress. Explore her portfolio to see her latest projects and learn more about her skills and experience.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDJCQTZ5P8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag () { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
+        gtag('config', 'G-EDJCQTZ5P8');
+    </script>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -1004,19 +1012,22 @@
     <script>
         const form = document.getElementById('contact');
 
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', function (e)
+        {
 
             const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
 
-            if (!hCaptcha) {
+            if (!hCaptcha)
+            {
                 e.preventDefault();
-                alert("Please fill out captcha field")
-                return
+                alert("Please fill out captcha field");
+                return;
             }
         });
     </script>
     <script>
-        function openIframe() {
+        function openIframe ()
+        {
             var iframe = document.createElement("iframe");
             iframe.style.borderRadius = "24px";
             iframe.style.position = "fixed";
@@ -1036,7 +1047,8 @@
             closeButton.style.bottom = "430px";
             closeButton.style.right = "5px";
             closeButton.style.zIndex = "1000";
-            closeButton.onclick = function () {
+            closeButton.onclick = function ()
+            {
                 iframe.remove();
                 closeButton.remove();
             };
